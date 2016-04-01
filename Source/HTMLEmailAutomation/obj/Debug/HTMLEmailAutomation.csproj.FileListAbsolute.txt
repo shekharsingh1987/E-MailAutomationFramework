@@ -1,0 +1,9 @@
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\bin\Debug\HTMLEmailAutomation.exe.config
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\obj\Debug\HTMLEmailAutomation.csprojResolveAssemblyReference.cache
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\bin\Debug\HTMLEmailAutomation.exe
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\bin\Debug\HTMLEmailAutomation.pdb
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\obj\Debug\HTMLEmailAutomation.exe
+C:\Users\Shekhark\Documents\Visual Studio 2015\Projects\HTMLEmailAutomation\HTMLEmailAutomation\obj\Debug\HTMLEmailAutomation.pdb
+D:\GITRepository\E-MailAutomationFramework\Source\HTMLEmailAutomation\bin\Debug\HTMLEmailAutomation.exe.config
+D:\GITRepository\E-MailAutomationFramework\Source\HTMLEmailAutomation\obj\Debug\HTMLEmailAutomation.exe
+D:\GITRepository\E-MailAutomationFramework\Source\HTMLEmailAutomation\obj\Debug\HTMLEmailAutomation.pdb
