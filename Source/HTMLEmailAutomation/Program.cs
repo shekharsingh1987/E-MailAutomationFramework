@@ -16,8 +16,8 @@ namespace HTMLEmailAutomation
             const string mailerUser = "shekhark@orioninc.com";
             const string mailerPassword = "pwd";
             const string storeType = "Sql"; 
-            const string storeConnString = @"Data Source=SHEKHAR\SQL2012DEV;Initial Catalog=MailBody;Integrated Security=True";
-            const string exchangeService = "";
+            const string storeConnString = @"Data Source=SEKHRU-PC\MSSQLSERVER2014;Initial Catalog=MailBody;Integrated Security=True";
+            const string exchangeService = "smtp.office365.com";
             try
             {
                 IMailStoreManager store = MailStoreFactory.Get(storeType, storeConnString);
@@ -25,13 +25,16 @@ namespace HTMLEmailAutomation
                 string mailBody = store.FetchMailBody();
                 string mailHeader = store.FetchMailHeader();
                 string mailFooter = store.FetchMailFooter();
+                string mailSubject = "ORTIA:: Crizzal Automated Mail Test";
                 Dictionary<string, string> reciepentList = store.FetchMailingList();
 
                 IHtmlMaiBuilder mailBuilder = HtmlMailBuilderFactory.Get();
                 string mail = mailBuilder.ConstructMail(mailHeader, mailBody,mailBodyTitle, mailFooter);
 
                 IMailSender sender = MailSenderFactory.Get();
-                sender.Send(mailerUser, mailerPassword, exchangeService, reciepentList,mail);
+                sender.Send(mailerUser, mailerPassword, exchangeService, reciepentList,mail, mailSubject);
+
+                Console.WriteLine("Message Sent");
             }
             catch(NotImplementedException)
             {
@@ -41,6 +44,8 @@ namespace HTMLEmailAutomation
             {
                 Console.WriteLine(ex.Message);
             }
+
+            Console.ReadKey();
 
         }
     }

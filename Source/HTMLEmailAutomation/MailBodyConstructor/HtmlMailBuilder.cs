@@ -12,8 +12,41 @@ namespace HTMLEmailAutomation.MailBodyConstructor
         {
             string id = "28";
             string footer = string.Format(mailFooter, id);
-            string body= string.Format(mailHeader, "header","Body","Footer");
-            return body;
+            //Take the string betweeen <body> and </body>
+            string bodyPart = ExtractBodyTagOfHtml(mailHeader, "<body>", @"</html>");
+            string body = string.Format(bodyPart, mailBodyTitle, mailBody, footer);
+            string contentBeforeBody = ExtractHeadContent(mailHeader, "<body>");
+            return contentBeforeBody + body;
+        }
+
+        private string ExtractHeadContent(string value, string a)
+        {
+            int posA = value.LastIndexOf(a) + a.Length;
+            if (posA == -1)
+            {
+                return "";
+            }
+            return value.Substring(0, posA);
+        }
+
+        private string ExtractBodyTagOfHtml(string value, string a, string b)
+        {
+            int posA = value.IndexOf(a);
+            int posB = value.LastIndexOf(b);
+            if (posA == -1)
+            {
+                return "";
+            }
+            if (posB == -1)
+            {
+                return "";
+            }
+            int adjustedPosA = posA + a.Length;
+            if (adjustedPosA >= posB)
+            {
+                return "";
+            }
+            return value.Substring(adjustedPosA, posB - adjustedPosA);
         }
     }
 }

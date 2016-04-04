@@ -8,6 +8,6 @@ namespace HTMLEmailAutomation.HTMLMailSender
 {
     interface IMailSender
     {
-        void Send(string mailer, string mailerPassword, string exchange, Dictionary<string, string> reciepent,string mail);
+        void Send(string mailer, string mailerPassword, string exchange, Dictionary<string, string> reciepent,string mail,string mailSubject);
     }
 }
